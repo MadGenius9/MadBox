@@ -1,0 +1,22 @@
+MadBox - Windows first launch
+
+1. If needed, install Node.js 22.12 or newer from https://nodejs.org
+   Node.js 24 LTS is recommended. Install it yourself; MadBox does not install it.
+2. Right-click the ZIP and choose Extract All. Do not run files inside the ZIP.
+3. Open the extracted MadBox folder and double-click StartMadBox.cmd.
+4. Press Y on the first launch if you want to install MadBox's project packages.
+   This needs internet access and installs packages in the game folder only.
+
+The game opens in your browser. Leave the launcher window open while playing.
+Press Ctrl+C in that window to stop it. Saved worlds stay in the same browser.
+Use the same address and browser each time; do not clear browser data.
+
+If an error appears, the launcher keeps it visible so you can copy it for help.
+If port 5173 is already in use, stop the other MadBox server and try again.
+
+Manual PowerShell alternative from the extracted game folder:
+  npm.cmd ci
+  npm.cmd run dev -- --host 127.0.0.1 --port 5173 --strictPort --open
+Using npm.cmd avoids npm.ps1 execution-policy errors. No policy change is needed.
+
+MadBox is a browser game. This launcher is not a native Windows executable.

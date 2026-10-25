@@ -6,6 +6,25 @@ A browser god simulator built with TypeScript, Vite, and PixiJS 8. Shape seeded 
 
 Requires Node.js 22.12+ (Node 24 recommended).
 
+### Windows first launch
+
+1. Install Node.js 22.12 or newer manually from [nodejs.org](https://nodejs.org) if needed.
+2. Extract the complete MadBox ZIP into a normal folder.
+3. Double-click **StartMadBox.cmd**. On the first launch, press **Y** if you want it to download the project's locked packages. It asks before installing anything.
+
+MadBox opens in your browser. Keep the launcher window open while playing; press **Ctrl+C** there to stop it. This is a launcher for the browser game, not a native Windows executable. If startup fails, the window keeps the error visible. The launcher does not install Node.js, change global settings, or clear saves.
+
+It uses a fixed local address and port so saves stay associated with the same browser origin. If another server occupies port 5173, it reports an error instead of silently opening a different save location. Use the same browser when returning to your world.
+
+For manual setup in PowerShell, use `npm.cmd` so PowerShell does not try to execute the blocked `npm.ps1` wrapper. No execution-policy changes are needed:
+
+```powershell
+npm.cmd ci
+npm.cmd run dev -- --host 127.0.0.1 --port 5173 --strictPort --open
+```
+
+### Terminal launch
+
 ```sh
 git clone https://github.com/MadGenius9/MadBox.git
 cd MadBox
